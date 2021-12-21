@@ -1,6 +1,7 @@
 package graph;
 
 import Enums.TargetPosition;
+import serialSet.SerialSet;
 import target.Target;
 import java.util.*;
 
@@ -8,12 +9,14 @@ public class Graph {
     private String graphName;
     private String workingDirectory;
     private Map<Target, Set<Target>> map;
+    private Collection<SerialSet> serialSets;
 
     /* the function create new graph */
     public Graph(String name, String workingDirectory){
         this.graphName = name.trim();
         this.workingDirectory = workingDirectory.trim();
         this.map = new HashMap<>();
+        this.serialSets = new ArrayList<>();
     }
 
     /* copy constructor */

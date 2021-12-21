@@ -1,6 +1,7 @@
 package engineManager;
 
 import Enums.DependencyTypes;
+import com.sun.prism.shader.FillPgram_RadialGradient_PAD_AlphaTest_Loader;
 import dtoObjects.GraphDTO;
 import dtoObjects.SimulationSummeryDTO;
 import dtoObjects.TargetDTO;
@@ -282,13 +283,18 @@ public class EngineManager implements EngineManagerInterface{
             }
             graphsList.add(graphOrigin);
             graphsList.add(graphIncremental);
+            addSerialSetsToGraph(root.getGPUPSerialSets());
             return graphsList;
         } else{
             throw new XmlException("The file doesn't fit the schema.");
         }
     }
 
-
+    private void addSerialSetsToGraph(GPUPDescriptor.GPUPSerialSets gpupSerialSets){
+        for (GPUPDescriptor.GPUPSerialSets.GPUPSerialSet gpupSet : gpupSerialSets.getGPUPSerialSet()){
+            String name = gpupSet.getName();
+        }
+    }
 
     /* the function add targets to target list */
     private void addToTargetList(Map<String, Target> map, GPUPDescriptor root, Graph graph, boolean isOrigin, Set<String> errors) {

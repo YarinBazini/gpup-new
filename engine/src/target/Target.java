@@ -3,6 +3,8 @@ package target;
 import Enums.TargetPosition;
 import Enums.TargetRunStatus;
 import Enums.TargetStatus;
+import serialSet.SerialSet;
+
 import java.util.*;
 
 public class Target {
@@ -12,6 +14,12 @@ public class Target {
     private Set<Target> dependsOnList;
     private Set<Target> requiredForList;
     private String generalInfo;
+    private ArrayList<SerialSet> serialSets;
+
+
+    public void addSerialSet(SerialSet serialSet){
+        serialSets.add(serialSet);
+    }
 
     /* the function update run status property */
     public void setRunStatus(TargetRunStatus runStatus) {

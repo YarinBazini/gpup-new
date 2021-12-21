@@ -6,6 +6,8 @@ import engineManager.EngineManager;
 import exceptions.MenuOptionException;
 import exceptions.TaskException;
 import java.util.*;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.function.Consumer;
 
 public class RunTaskOption implements MenuOption{
@@ -30,6 +32,17 @@ public class RunTaskOption implements MenuOption{
             chanceTargetWarning = askForChanceTargetWarning(scanner);
             scanner.nextLine();
             entryPointString = askForEntryPointString(scanner);
+//            /* ************* */
+//            ExecutorService threadExecutor = Executors.newFixedThreadPool(1);
+//
+//
+//
+//
+//
+//
+//
+//
+//            /* ************ */
             if (isRandomString.equalsIgnoreCase("Y"))
                 isRandom = true;
             if (entryPointString.equalsIgnoreCase("Y"))
