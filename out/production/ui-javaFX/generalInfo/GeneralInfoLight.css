@@ -14,3 +14,9 @@
 #error_label{
     -fx-font-size: 18;
 }
+
+.file_path_label{
+    -fx-background-color: white;
+    -fx-padding: 2 10 2 10;
+    -fx-border-color: black;
+}
